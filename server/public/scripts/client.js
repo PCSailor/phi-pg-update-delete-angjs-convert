@@ -28,6 +28,14 @@ app.controller('BookController', ['$http', function($http){
     });
   }
 
+self.deleteBook = function(idOfBookToDelete){ 
+  $http({
+    method: 'DELETE',
+    url: '/books/delete/' + idOfBookToDelete
+  }).then(function(response){
+    getBooks();
+  });
+}
 
 
 
